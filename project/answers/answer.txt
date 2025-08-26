@@ -1,0 +1,61 @@
+Q1 — Definitions
+
+a) Bias and Variance
+
+Bias: Error due to overly simplistic assumptions in the model. High bias → underfitting.
+Way to reduce: Use a more complex model or add relevant features.
+
+Variance: Error due to sensitivity to small fluctuations in training data. High variance → overfitting.
+Way to reduce: Increase training data, apply L1/L2 regularization, or use cross-validation.
+
+b) Overfitting vs Underfitting
+
+Overfitting: Model learns noise → poor generalization.
+Detection: High training accuracy, low validation/test accuracy.
+
+Underfitting: Model too simple → cannot capture patterns.
+Detection: Low training and validation/test accuracy.
+
+Q4 — Optimization / Learning Rate (MCQ)
+
+Question: Which learning rate behavior is most likely to cause the loss to oscillate and not converge?
+Answer: B) Too large lr
+Explanation: Large learning rate overshoots the minimum repeatedly, causing oscillation and divergence.
+
+Q5 — Metrics
+
+Precision: Correct positive predictions ÷ All positive predictions.
+
+Recall: Correct positive predictions ÷ All actual positives.
+
+When Precision is more important: In cases where false positives are costly (e.g., spam detection, disease diagnosis).
+
+Thresholding strategy to increase Precision: Increase decision threshold (e.g., from 0.5 → 0.7) so fewer positives are predicted, reducing false positives.
+
+Q6 — Regularization
+
+L1 Regularization (Lasso): Adds absolute weight penalty → encourages sparsity (some weights = 0).
+
+L2 Regularization (Ridge): Adds squared weight penalty → shrinks weights, rarely zero.
+
+Scenario for L1: Feature selection in high-dimensional data; removes unimportant features by zeroing weights.
+
+Q7 — Cross-validation (MCQ)
+
+Question: Which CV scheme to use for highly temporal data?
+Answer: C) TimeSeriesSplit
+Explanation: Temporal order matters; random splits would leak future information into the past.
+
+Q10 — Data Leakage:
+
+Definition: Using information from outside the training dataset in model creation, causing overly optimistic performance.
+
+Example: Using future test set values to train a model.
+
+Prevention:
+
+Only use past data for training.
+
+Properly separate training and test datasets.
+
+Apply preprocessing (scaling, encoding) separately for training and test sets.
